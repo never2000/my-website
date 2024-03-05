@@ -42,6 +42,36 @@
             bottom: 0;
             width: 100%;
         }
+        #image-preview1 {
+            position: absolute;
+            border: 1px solid #000;
+            background-color: #fff;
+            padding: 5px;
+            display: none;
+        }
+        #image-preview2 {
+            position: absolute;
+            border: 1px solid #000;
+            background-color: #fff;
+            padding: 5px;
+            display: none;
+        }
+        #image-preview3 {
+            position: absolute;
+            border: 1px solid #000;
+            background-color: #fff;
+            padding: 5px;
+            display: none;
+        }
+        .hover1-image {
+            position: relative;
+        }
+        .hover2-image {
+            position: relative;
+        }
+        .hover3-image {
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -70,9 +100,25 @@
 
     <div class="content" id="experience">
         <h2>經歷</h2>
-        <p>英雄聯盟校際杯 國立臺中科技大學 2021秋季校內徵選賽 殿軍</p>
-        <p>TANET2022臺灣網際網路研討會論文錄取</p>
-        <p>國立臺中科技大學 2022資訊與流通學院專題成果展 【應用組&研究組】 成績優異獎</p>
+        <p>
+            <a href="#校際杯獎狀" class="hover1-image">英雄聯盟校際杯 國立臺中科技大學 2021秋季校內徵選賽 殿軍</a>
+            <div id="image-preview1">
+                <img src="校際盃獎狀.png" width="400";  />
+            </div>
+        </p>
+        <p>
+            <a href="#TANET 2022 台灣網際網路研討會發表證明" class="hover2-image">TANET2022臺灣網際網路研討會論文錄取</a>
+            <div id="image-preview2">
+                <img src="TANET 2022 台灣網際網路研討會發表證明.png" width="400";  />
+            </div>
+        </p>
+        <p>
+            <a href="#2022年資訊與流通學院專題成果展獎狀" class="hover3-image">國立臺中科技大學 2022資訊與流通學院專題成果展 【應用組&研究組】 成績優異獎</a>
+            <div id="image-preview3">
+                <img src="2022年資訊與流通學院專題成果展獎狀.png" width="400";/>
+            </div>
+        </p>
+       
     </div>
 
     <div class="content" id="autobiography">
@@ -129,7 +175,40 @@
             並收錄於TANET2022論文集(ISBN:978-626-95705-5-3)下冊p-1135。
             在同年底校內專題成果展也取得【應用組&研究組】領域特別獎。</p>
     </div>
-    
+    <script>
+        document.querySelector('.hover1-image').addEventListener('mouseover', function(event) {
+            var preview1 = document.getElementById('image-preview1');
+            preview1.style.display = 'block';
+            preview1.style.left = event.pageX + 'px';
+            preview1.style.top = event.pageY + 'px';
+        });
+
+        document.querySelector('.hover1-image').addEventListener('mouseout', function() {
+            document.getElementById('image-preview1').style.display = 'none';
+        });
+
+        document.querySelector('.hover2-image').addEventListener('mouseover', function(event) {
+            var preview2 = document.getElementById('image-preview2');
+            preview2.style.display = 'block';
+            preview2.style.left = event.pageX + 'px';
+            preview2.style.top = event.pageY + 'px';
+        });
+
+        document.querySelector('.hover2-image').addEventListener('mouseout', function() {
+            document.getElementById('image-preview2').style.display = 'none';
+        });
+
+        document.querySelector('.hover3-image').addEventListener('mouseover', function(event) {
+            var preview3 = document.getElementById('image-preview3');
+            preview3.style.display = 'block';
+            preview3.style.left = event.pageX + 'px';
+            preview3.style.top = event.pageY + 'px';
+        });
+
+        document.querySelector('.hover3-image').addEventListener('mouseout', function() {
+            document.getElementById('image-preview3').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
 
